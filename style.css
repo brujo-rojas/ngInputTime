@@ -1,0 +1,11 @@
+input.num{
+  width: 100%;
+  font-size: 36px;
+}
+.text-big{
+  font-size: 36px;
+}
+
+time-input{
+  display: block;
+}

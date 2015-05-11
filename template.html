@@ -1,0 +1,52 @@
+<!-- Simple dropdown -->
+    <span class="dropdown" dropdown on-toggle="toggled(open)" is-open="status.isOpen">
+      <a href class="dropdown-toggle" dropdown-toggle>
+        {{hora_dir}} : {{minutos_dir}}
+      </a>
+      <ul class="dropdown-menu">
+
+          
+                      
+                      
+          <div class="row">
+            <div class="col-xs-12">
+              
+                <div class="row">
+                  <div class="col-xs-5">
+                    <button class="btn btn-default btn-block btn-xs" ng-click="agregarHora($event)"> <span class="glyphicon glyphicon-chevron-up"></span></button>
+                  </div>
+                  <div class="col-xs-1"></div>
+                  <div class="col-xs-5">
+                    <button class="btn btn-default btn-block btn-xs" ng-click="agregarMinutos($event)"> +15 </button>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  
+                  <div class="col-xs-5">
+                    <input type="text" name="" ng-click="$event.preventDefault(); $event.stopPropagation();" ng-model="hora_dir" class="num">
+                  </div>
+                  <div class="col-xs-1 text-big">:</div>
+                  
+                  <div class="col-xs-5">
+                    <input type="text" name="" ng-click="$event.preventDefault(); $event.stopPropagation();" ng-model="minutos_dir" value="00" class="num">
+                  </div>
+                  
+                </div>
+                
+                <div class="row">
+                  <div class="col-xs-5">
+                    <button class="btn btn-default btn-block btn-xs" ng-click="quitarHora($event)"> <span class="glyphicon glyphicon-chevron-down"></span></button>
+                  </div>
+                  <div class="col-xs-1"></div>
+                  <div class="col-xs-5">
+                    <button class="btn btn-default btn-block btn-xs" ng-click="quitarMinutos($event)"> -15 </button>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+
+
+      </ul>
+    </span>
