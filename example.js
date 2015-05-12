@@ -34,13 +34,6 @@ $scope.arreglo = [
     templateUrl:"template.html",
     scope:{hora_dir:"=tiHora", minutos_dir:"=tiMinutos"},
     link:  function($scope, element, attributes) {
-          console.log("link");
-          console.dir($scope);
-          console.dir(element);
-          console.dir(attributes);
-          
-          
-          
           
           $scope.agregarHora = function($event){
             $event.preventDefault(); 
@@ -51,7 +44,13 @@ $scope.arreglo = [
           $scope.agregarMinutos = function($event){
             $event.preventDefault(); 
             $event.stopPropagation();
-            $scope.minutos_dir += 15;
+            if($scope.minutos_dir + 15 >= 60){
+              $scope.minutos_dir = $scope.minutos_dir - 45;
+              $scope.hora_dir += 1;
+            }else{
+              $scope.minutos_dir += 15;
+            }
+            
           }
           
           
@@ -66,7 +65,12 @@ $scope.arreglo = [
           $scope.quitarMinutos = function($event){
             $event.preventDefault(); 
             $event.stopPropagation();
-            $scope.minutos_dir -= 15;
+            if($scope.minutos_dir - 15 < 0){
+              $scope.minutos_dir += 45;
+              $scope.hora_dir -= 1;
+            }else{
+              $scope.minutos_dir -= 15;
+            }
           }
           
         }

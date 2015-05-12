@@ -9,3 +9,9 @@ input.num{
 time-input{
   display: block;
 }
+.dropdown-menu-time-input  .btn{
+  text-align:center;
+}
+.dropdown-menu-time-input  .num{
+  text-align:center
+}
